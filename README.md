@@ -13,7 +13,9 @@ Export Workflow Automation Case Study
     - [Logging & Output Layer](#4-logging--output-layer)
     - [Network & Fault Tolerance Layer](#5-network--fault-tolerance-layer)
     - [Control & Monitoring Layer](#6-control--monitoring-layer)
-  - [1.4 Overall Workflow Breakdown](#14-overall-workflow-breakdown)
+  - [1.4 Architecture Diagram](#14-architecture-diagram)
+- [2. Confidentiality Note](#2-confidentiality-note)
+
 
 # Export Form Processor (EFP)
 
@@ -66,7 +68,7 @@ These strict timelines mean that any delays caused by manual entry can result in
 
 ---
 
-**What the Automation System Delivers (Gains):**
+**Impact:**
 
 The automation framework directly addresses these issues with a highly targeted solution that delivers by:
 
@@ -198,43 +200,24 @@ This layer detects and mitigates network or system failures to ensure continuous
 ---
 
 #### 6. Control & Monitoring Layer
-- A CLI (console) interface is used to:
-    - Choose operation (acquittal or babyline entry)
+- A user friendly CLI interface is used to:
+    - Choose task
     - Input login credentials
     - Monitor progress in real time
 - Includes fail-safe commands:
     - `[ESC]` – Safely terminate execution
-    - `[F5]` – Restart babyline operation when it hangs for too long, but this is a rare case
+    - `[F5]` – Restart an operation if it suddenly hangs
 
 ---
 
-### 1.4. Overall Workflow Breakdown
+### 1.4 Architecture Diagram
 
-Below is a simplified flow of how the automation process works across all modules:
-
-1. **Startup Phase:**
-    - User fills in the CD1/CD3/Babyline data in an Excel Input Form
-    - User starts program, multiple browser sessions are launched in parallel at startup
-
-2. **Task Selection:**
-    - User chooses one of three tasks: Form CD1 Acquittal, Form CD3 Acquittal, or Babyline Entry.
-
-3. **Data Handling:**
-    - CD1/CD3/Babyline data is read from the Excel Input Form    
-    - System divides the full dataset into batches and gives each driver a single batch to process
-
-5. **Driver Execution (In Parallel):**
-    - Each driver logs into CEPECS using the provided credentials.
-    - On its allocated batch, each driver performs Form submission, acquittal, or shipment capture through browser interaction (clicks, inputs, waits).
-    - If discrepancies arise (e.g., overpayments/underpayments), the system prompts the user once for a reason and reuses it for similar cases.
-
-6. **Logging and Completion:**
-    - Each driver logs the results (success, partial, failed, skipped) to an Excel Results file
-    - Once complete, a brief description of each failed action, if any occurred, is shown onscreen for the user to review and if possible, take on manually in CEPECS.
-
-7. **Exit and Cleanup:**
-    - User can exit by pressing [ESC], which triggers a safe shutdown.
-    - All drivers are closed cleanly.
+<img width="1218" height="666" alt="Screenshot 2026-04-28 115722" src="https://github.com/user-attachments/assets/d7116b64-1134-42d0-beb9-d1b8e1f43ba4" />
 
 ---
+
+## 2. Confidentiality Note
+- Full source code remains private due to operational confidentiality and proprietary implementation details.
+
+
 
