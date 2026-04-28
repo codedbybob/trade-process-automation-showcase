@@ -17,7 +17,6 @@ Export Workflow Automation Case Study
 - [2. Confidentiality Note](#2-confidentiality-note)
 
 
-# Export Form Processor (EFP)
 
 ## 1. SYSTEM OVERVIEW & ARCHITECTURE
 
