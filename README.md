@@ -212,7 +212,8 @@ This layer detects and mitigates network or system failures to ensure continuous
 
 ### 1.4 Architecture Diagram
 
-<img width="1218" height="666" alt="Screenshot 2026-04-28 115722" src="https://github.com/user-attachments/assets/d7116b64-1134-42d0-beb9-d1b8e1f43ba4" />
+<img width="1217" height="667" alt="image" src="https://github.com/user-attachments/assets/80f0f148-a03d-42ce-831b-f2c09bf39475" />
+
 
 ---
 
